@@ -1,6 +1,6 @@
 require("module-alias/register");
 globalThis.rovel = require("rovel.js");
-var path = require("path");
+globalThis.path = require("path");
 console.log(rovel.text.green("[INFO]") + "Starting devproject!");
 const v = process.version.slice(1, 3);
 if (v < 16 && process.platform != "android") {

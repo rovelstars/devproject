@@ -4,7 +4,8 @@
   "description": "A place for devs",
   "main": "src/index.js",
   "scripts": {
-    "start": "node ."
+    "start": "node .",
+    "tailwind:css": "postcss src/public/css/tailwind.css -o src/public/css/style.css"
   },
   "repository": {
     "type": "git",
@@ -19,16 +20,29 @@
   "dependencies": {
     "@sentry/node": "^6.10.0",
     "@sentry/tracing": "^6.10.0",
+    "cheerio": "^1.0.0-rc.10",
     "discord.js": "^12.5.3",
+    "ejs": "^3.1.6",
     "express": "^4.17.1",
+    "html-minifier": "^4.0.0",
+    "jsdom": "^16.6.0",
     "module-alias": "^2.2.2",
     "mongodb": "^4.0.1",
     "mongoose": "^5.13.3",
+    "postcss-cli": "^8.3.1",
+    "postcss-import": "^14.0.2",
+    "purify-css": "^1.2.5",
     "rovel.js": "^1.2.0",
     "shelljs": "^0.8.4"
   },
   "_moduleAliases": {
     "@server": "src/server",
     "@root": "src"
+  },
+  "devDependencies": {
+    "@tailwindcss/jit": "^0.1.18",
+    "autoprefixer": "^10.3.1",
+    "postcss": "^8.3.6",
+    "tailwindcss": "^2.2.7"
   }
 }
