@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Starting Up...</title>
+	</head>
+	<body>
+				<script>
+					window.addEventListener("DOMContentLoaded",(event)=>{
+					var container = document.getElementById("container");
+											fetch(window.location.href,{
+																	headers:{
+																						"worker":"true"},
+																}).then(r=>r.text()).then(d=>{
+						container.innerHTML=d;
+					});
+					});
+				</script>
+		<div id="container">
+		</div>
+	</body>
+	</html>
