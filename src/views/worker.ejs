@@ -4,7 +4,55 @@
 		<title>Starting Up...</title>
 	</head>
 	<body>
+		<% bgcolor="#2F3136"; hex="#FF851B"%>
+		  <style>
+body{display:flex;flex-direction:column;}#loading{margin:0;padding:0;background-color:#36393F;height:100%;width:100%;position:fixed;z-index:9999;margin-top:0;top:0}#loading-center{width:100%;height:100%;position:relative}#loading-center-absolute{position:absolute;left:50%;top:50%;height:200px;width:200px;margin-top:-100px;margin-left:-100px;}.loading{position:fixed;text-align:center;padding:10px;background-color:<%= bgcolor %>}#loadtext{font-style:italic;text-align:center;color:#fff;position:absolute;font-family:Roboto,sans-serif;font-size:15px;top:68%;width:100%;text-align:center}
+			</style>
+			<div id="loading">
+  <div id="loading-center">
+    <img id="loading-center-absolute" src="https://cdn.discordapp.com/attachments/775225719743053844/870938011825750026/Frame_1.svg">
+			</img>
+    <div id="loadtext"> 
+   <noscript><br />
+    Alert! RDL requires JavaScript in order to run, without it, you won't be able to view any page.
+   </noscript>
+  </div>
+  </div>
+</div>
 				<script>
+					var loader = document.getElementById("loading");
+					loader.style.transition="0.8s";
+					(function() {
+            var loaderText = document.getElementById("loadtext");
+											loaderText.innerHTML = getLoadingText();
+            var refreshIntervalId = setInterval(function() {
+                loaderText.innerHTML = getLoadingText();
+            }, 2500);
+
+            function getLoadingText() {
+                var strLoadingText;
+                var arrLoadingText = ["Adjusting Bell Curves", "Aesthesizing Industrial Areas", "Aligning Covariance Matrices", "Applying Feng Shui Shaders", "Applying Theatre Soda Layer", "Asserting Packed Exemplars",
+                    "Attempting to Lock Back-Buffer", "Binding Sapling Root System", "Breeding Fauna", "Building Data Trees", "Bureacritizing Bureaucracies", "Calculating Inverse Probability Matrices",
+                    "Calculating Llama Expectoration Trajectory", "Calibrating Blue Skies", "Charging Ozone Layer", "Coalescing Cloud Formations", "Cohorting Exemplars", "Collecting Meteor Particles", "Compounding Inert Tessellations",
+                    "Compressing Fish Files", "Computing Optimal Bin Packing", "Concatenating Sub-Contractors", "Containing Existential Buffer", "Debarking Ark Ramp", "Debunching Unionized Commercial Services",
+                    "Deciding What Message to Display Next", "Decomposing Singular Values", "Decrementing Tectonic Plates", "Deleting Ferry Routes", "Depixelating Inner Mountain Surface Back Faces", "Depositing Slush Funds",
+                    "Destabilizing Economic Indicators", "Determining Width of Blast Fronts", "Deunionizing Bulldozers", "Dicing Models", "Diluting Livestock Nutrition Variables", "Downloading Satellite Terrain Data",
+                    "Exposing Flash Variables to Streak System", "Extracting Resources", "Factoring Pay Scale", "Fixing Election Outcome Matrix", "Flood-Filling Ground Water", "Flushing Pipe Network", "Gathering Particle Sources",
+                    "Generating Jobs", "Gesticulating Mimes", "Graphing Whale Migration", "Hiding Willio Webnet Mask", "Implementing Impeachment Routine", "Increasing Accuracy of RCI Simulators", "Increasing Magmafacation",
+                    "Initializing My Sim Tracking Mechanism", "Initializing Rhinoceros Breeding Timetable", "Initializing Robotic Click-Path AI", "Inserting Sublimated Messages", "Integrating Curves", "Integrating Illumination Form Factors",
+                    "Integrating Population Graphs", "Iterating Cellular Automata", "Lecturing Errant Subsystems", "Mixing Genetic Pool", "Modeling Object Components", "Mopping Occupant Leaks", "Normalizing Power",
+                    "Obfuscating Quigley Matrix", "Overconstraining Dirty Industry Calculations", "Partitioning City Grid Singularities", "Perturbing Matrices", "Pixalating Nude Patch", "Polishing Water Highlights",
+                    "Populating Lot Templates", "Preparing Sprites for Random Walks", "Prioritizing Landmarks", "Projecting Law Enforcement Pastry Intake", "Realigning Alternate Time Frames", "Reconfiguring User Mental Processes",
+                    "Relaxing Splines", "Removing Road Network Speed Bumps", "Removing Texture Gradients", "Removing Vehicle Avoidance Behavior", "Resolving GUID Conflict", "Reticulating Splines", "Retracting Phong Shader",
+                    "Retrieving from Back Store", "Reverse Engineering Image Consultant", "Routing Neural Network Infanstructure", "Scattering Rhino Food Sources", "Scrubbing Terrain", "Searching for Llamas",
+                    "Seeding Architecture Simulation Parameters", "Sequencing Particles", "Setting Advisor Moods", "Setting Inner Deity Indicators", "Setting Universal Physical Constants", "Sonically Enhancing Occupant-Free Timber",
+                    "Speculating Stock Market Indices", "Splatting Transforms", "Stratifying Ground Layers", "Sub-Sampling Water Data", "Synthesizing Gravity", "Synthesizing Wavelets", "Time-Compressing Simulator Clock",
+                    "Unable to Reveal Current Activity", "Weathering Buildings", "Zeroing Crime Network"
+                ];
+                var rand = Math.floor(Math.random() * arrLoadingText.length);
+                return arrLoadingText[rand];
+            }
+        })();
 					window.addEventListener("DOMContentLoaded",(event)=>{
 					var container = document.getElementById("container");
 											fetch(window.location.href,{
@@ -12,6 +60,7 @@
 																						"worker":"true"},
 																}).then(r=>r.text()).then(d=>{
 						container.innerHTML=d;
+																						loader.style.opacity="0";
 					});
 					});
 				</script>
